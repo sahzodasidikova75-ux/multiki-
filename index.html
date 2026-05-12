@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мультфильмы: вред или польза? | Исследовательский проект</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #eef6ff 0%, #fff7e8 100%);
+            color: #1e2a3a;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .hero {
+            background: linear-gradient(135deg, #ffde9c 0%, #ffeac2 100%);
+            border-radius: 2rem;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            border: 1px solid #ffd58c;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1f6392;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #3a5d7c;
+        }
+        .hero .tag {
+            background: #ffffffcc;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #1f6392;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            transition: 0.2s;
+            border: 1px solid #ffecb3;
+        }
+        .section:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f6392;
+            border-left: 6px solid #f7b32b;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2a6b9e;
+            margin: 1.2rem 0 0.8rem 0;
+        }
+        .grid-2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        .col {
+            flex: 1;
+            min-width: 240px;
+            background: #fefce8;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #ffe2a4;
+        }
+        .time-card {
+            background: #eef5ff;
+            border-radius: 1.2rem;
+            padding: 0.2rem 0;
+        }
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #cde3f5;
+            font-weight: 500;
+        }
+        .time-row:last-child {
+            border-bottom: none;
+        }
+        .poll-number {
+            font-weight: 800;
+            color: #c95f1a;
+            background: #fff0d0;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        .quote {
+            background: #fff5e0;
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            font-style: italic;
+            margin: 1.2rem 0;
+            border-left: 5px solid #f7b32b;
+        }
+        .rule-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .rule-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        .rule-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            width: 140px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            border: 1px solid #ffe0a3;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .gallery-item p {
+            padding: 0.5rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            background: #fff3dc;
+        }
+        .booklet-demo {
+            background: #d9eaff;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            max-width: 320px;
+            margin: 1rem auto;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: #2c577c;
+            border-top: 1px solid #fddf8e;
+            margin-top: 1rem;
+            background: #fef3da;
+            border-radius: 1.5rem;
+        }
+        @media (max-width: 750px) {
+            .container { padding: 1rem; }
+            .hero h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.4rem; }
+            .section { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📺 Мультфильмы: вред или польза?</h1>
+        <p>Исследование детей и взрослых • 47 участников</p>
+        <div class="tag">🎓 Классика объединяет поколения</div>
+    </div>
+
+    <div class="section">
+        <h2>❓ Введение</h2>
+        <p>Сегодня мультфильмы стали неотъемлемой частью жизни каждого ребёнка. Дети проводят у экранов до 3 часов в день и воспринимают увиденное как руководство к действию. Но как отличить полезную анимацию от вредной? Давайте разбираться.</p>
+    </div>
+
+    <div class="section">
+        <h2>⏱️ Сколько времени можно проводить у экрана?</h2>
+        <p>ВОЗ и педиатры рекомендуют:</p>
+        <div class="time-card">
+            <div class="time-row"><span>👶 До 3 лет</span> <span><strong>не рекомендуется</strong></span></div>
+            <div class="time-row"><span>🧸 3–7 лет</span> <span><strong>не более 30 минут</strong> в день</span></div>
+            <div class="time-row"><span>📚 7–10 лет</span> <span><strong>30–50 минут</strong></span></div>
+            <div class="time-row"><span>📱 11–18 лет</span> <span><strong>1–3 часа</strong> с перерывами</span></div>
+        </div>
+        <p class="quote">⭐ Экранное время — это сумма ТВ, планшета, телефона и компьютера.</p>
+    </div>
+
+    <div class="section">
+        <h2>📊 Результаты опроса</h2>
+        <p><strong>47 человек:</strong> 27 детей, 20 взрослых. Любимые мультфильмы:</p>
+        <div class="grid-2">
+            <div class="col">
+                <h3>🧒 ДЕТИ</h3>
+                <ul><li>🐱 «Три кота» — 9</li><li>🐕 «Щенячий патруль» — 7</li><li>🏠 «Простоквашино» — 7</li><li>🐻 «Маша и медведь» — 6</li><li>🔧 «Фиксики» — 5</li><li>⭐ «Смешарики», «Лунтик» — по 4</li></ul>
+            </div>
+            <div class="col">
+                <h3>👩‍🦰 ВЗРОСЛЫЕ</h3>
+                <ul><li>🏠 «Простоквашино» — 7</li><li>⚔️ «Три богатыря» — 6</li><li>🐺 «Ну, погоди!» — 5</li><li>🐊 «Чебурашка» — 4</li><li>🍯 «Винни-Пух» — 4</li><li>👹 «Шрек», «Монстры на каникулах» — по 3</li></ul>
+            </div>
+        </div>
+        <p>📌 «Простоквашино» — мост между поколениями. Классика не стареет.</p>
+    </div>
+
+    <div class="grid-2">
+        <div class="col"><h3>✅ ПОЛЬЗА</h3><ul><li>Развивают интеллект</li><li>Эмоциональный интеллект</li><li>Речь и словарный запас</li><li>Дружба, добро</li></ul></div>
+        <div class="col"><h3>⚠️ ВРЕД</h3><ul><li>Перегрузка, тревожность</li><li>Пассивная речь</li><li>Агрессия, страхи</li><li>Зависимость, гиподинамия</li></ul></div>
+    </div>
+
+    <div class="section">
+        <h2>✅ 5 правил выбора мультфильма</h2>
+        <ul class="rule-list"><li>Чёткое разделение добра и зла</li><li>Герои с уважением и эмпатией</li><li>Плавная анимация, спокойные цвета</li><li>Приятный звук, грамотная речь</li><li>Логичный и понятный сюжет</li></ul>
+    </div>
+
+    <div class="section">
+        <h2>⭐ Фильмы для семейного просмотра</h2>
+        <ul><li>✅ «Аленький цветочек» (1978)</li><li>✅ «В стране невыученных уроков» (1977)</li><li>✅ «Винни Пух и все, все, все» (1969)</li><li>✅ «Вовка в Тридевятом царстве» (1965)</li><li>✅ «Двенадцать месяцев» (1956)</li><li>✅ «Котенок по имени Гав» (1976)</li><li>✅ «Смешарики» (с 2003)</li></ul>
+    </div>
+
+    <div class="section">
+        <h2>💡 Вместо экрана: альтернативы</h2>
+        <div class="grid-2">
+            <div class="col">📖 Читайте книги по мотивам</div>
+            <div class="col">🎨 Рисуйте персонажей</div>
+            <div class="col">🎭 Домашний театр</div>
+            <div class="col">👩‍🍳 Готовьте вместе (печенье)</div>
+            <div class="col">🎲 Настольные игры</div>
+            <div class="col">🏃 Активные игры на улице</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💎 Главный итог</h2>
+        <p>Мультфильм полезен или вреден — зависит от времени, качества и совместного просмотра с обсуждением. Дети копируют героев, поэтому важно говорить о поступках.</p>
+        <div class="quote">🌟 «Смотрите вместе, обсуждайте и выбирайте качественные истории!»</div>
+    </div>
+
+    <div class="section" style="text-align:center">
+        <h2>📘 Продукт проекта</h2>
+        <div class="booklet-demo">🧾 Буклет для родителей: возрастные нормы, список мультфильмов, 10 правил</div>
+        <p>🎁 Буклет роздан участникам опроса.</p>
+    </div>
+
+    <footer>
+        📌 Проект выполнила: <strong>Сидикова Шахзода Собитхоновна</strong><br>
+        👨‍🏫 Руководитель: <strong>Волков Максим Анатольевич</strong><br>
+        📍 Город Обнинск, 2026 год
+    </footer>
+</div>
+</body>
+</html>
